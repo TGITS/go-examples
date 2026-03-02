@@ -30,3 +30,6 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+/aoc/2023/aoc20231205/data/input.txt
+/aoc/2023/aoc20231206/data/input.txt
+/aoc/2023/aoc20231207/data/input.txt
