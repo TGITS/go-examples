@@ -14,7 +14,7 @@ Depuis ce dossier (`aoc/2023/aoc20231205`) :
 go run .
 ```
 
-## Test
+## Tests
 
 Depuis ce dossier (`aoc/2023/aoc20231205`) :
 

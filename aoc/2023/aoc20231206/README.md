@@ -1,8 +1,10 @@
 # AoC 2023 Day 6
 
+**French version available:** [README_FR.md](README_FR.md)
+
 ## Overview
 
-Go solution for Advent of Code 2023 - Day 6.
+Go solution for [Advent of Code 2023 - Day 6](https://adventofcode.com/2023/day/6).
 
 ## Run
 
@@ -20,7 +22,7 @@ From this folder (`aoc/2023/aoc20231206`):
 go test ./...
 ```
 
-## Benchmark
+## Benchmarks
 
 From this folder (`aoc/2023/aoc20231206`):
 
@@ -47,4 +49,4 @@ bash ./run_benchmarks.sh
 
 - `data/input_test.txt`
 - `data/input.txt`
-  - This file is specific to each user of AoC, so it is not commited in the repository: you must provide your specific input file.
+  - This file is specific to each AoC user and is not committed to the repository: you must provide your own input file.

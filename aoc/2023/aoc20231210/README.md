@@ -1,5 +1,7 @@
 # AoC 2023 Day 10
 
+**French version available:** [README_FR.md](README_FR.md)
+
 ## Overview
 
 Go solution for [Advent of Code 2023 - Day 10](https://adventofcode.com/2023/day/10) : _Pipe Maze_
