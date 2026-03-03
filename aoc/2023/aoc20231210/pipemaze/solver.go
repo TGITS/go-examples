@@ -92,7 +92,7 @@ func computeMaxDistance(visited [][2]int) int {
 	}
 
 	maxMin := 0
-	for i := 0; i < length; i++ {
+	for i := range length {
 		dist1 := i
 		dist2 := length - i
 		minDist := dist1
@@ -213,8 +213,8 @@ func SolvePart2(filename string) int {
 
 	// Count enclosed tiles using ray-casting
 	count := 0
-	for y := 0; y < len(grid); y++ {
-		for x := 0; x < len(grid[y]); x++ {
+	for y := range grid {
+		for x := range grid[y] {
 			if !loopSet[[2]int{x, y}] {
 				// This tile is not part of the loop
 				if isInside(grid, x, y, loopSet, startX, startY, startChar) {
@@ -326,8 +326,8 @@ func VisualizeLoopASCII(filename string) string {
 	startChar := determineStartChar(grid, startX, startY)
 
 	var result strings.Builder
-	for y := 0; y < len(grid); y++ {
-		for x := 0; x < len(grid[y]); x++ {
+	for y := range grid {
+		for x := range grid[y] {
 			if loopSet[[2]int{x, y}] {
 				// Part of the loop - show the pipe character
 				if x == startX && y == startY {
@@ -370,8 +370,8 @@ func VisualizeLoopWithDistances(filename string) string {
 	}
 
 	var result strings.Builder
-	for y := 0; y < len(grid); y++ {
-		for x := 0; x < len(grid[y]); x++ {
+	for y := range grid {
+		for x := range grid[y] {
 			if loopSet[[2]int{x, y}] {
 				// Part of the loop - show distance in hexadecimal (mod 16)
 				dist := distances[[2]int{x, y}]

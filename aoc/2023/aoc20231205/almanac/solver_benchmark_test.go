@@ -55,7 +55,7 @@ func benchmarkPart2Solver(b *testing.B, filename string, solver func([]SeedRange
 	dataset := benchmarkDataByFile[filename]
 
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		_ = solver(dataset.seedRanges, dataset.associatedRangesByName)
 	}
 }

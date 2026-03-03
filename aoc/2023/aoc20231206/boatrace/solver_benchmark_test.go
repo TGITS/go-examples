@@ -25,7 +25,7 @@ func BenchmarkNumberOfWaysToWin_SmallRace(b *testing.B) {
 	var bestDistance uint64 = 200
 
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		_ = NumberOfWaysToWin(duration, bestDistance)
 	}
 }
@@ -39,7 +39,7 @@ func BenchmarkRecordBreakingsProducts_InputTest(b *testing.B) {
 	defer log.SetOutput(previousWriter)
 
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		_ = RecordBreakingsProducts("../data/input_test.txt")
 	}
 }
@@ -53,7 +53,7 @@ func BenchmarkRecordBreaking_InputTest(b *testing.B) {
 	defer log.SetOutput(previousWriter)
 
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		_ = RecordBreaking("../data/input_test.txt")
 	}
 }

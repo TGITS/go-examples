@@ -35,8 +35,8 @@ func GenerateLoopVisualizationImage(filename string, pixelSize int) (image.Image
 	colorOutside := color.RGBA{200, 200, 200, 255} // Light gray
 
 	// Draw pixels
-	for y := 0; y < height; y++ {
-		for x := 0; x < width; x++ {
+	for y := range height {
+		for x := range width {
 			var c color.Color
 			if loopSet[[2]int{x, y}] {
 				c = colorLoop
@@ -45,8 +45,8 @@ func GenerateLoopVisualizationImage(filename string, pixelSize int) (image.Image
 			}
 
 			// Draw pixelSize x pixelSize block
-			for dy := 0; dy < pixelSize; dy++ {
-				for dx := 0; dx < pixelSize; dx++ {
+			for dy := range pixelSize {
+				for dx := range pixelSize {
 					img.Set(x*pixelSize+dx, y*pixelSize+dy, c)
 				}
 			}
@@ -88,8 +88,8 @@ func GenerateEnclosedVisualizationImage(filename string, pixelSize int) (image.I
 	colorOutside := color.RGBA{200, 200, 200, 255} // Light gray
 
 	// Draw pixels
-	for y := 0; y < height; y++ {
-		for x := 0; x < width; x++ {
+	for y := range height {
+		for x := range width {
 			var c color.Color
 
 			if loopSet[[2]int{x, y}] {
@@ -101,8 +101,8 @@ func GenerateEnclosedVisualizationImage(filename string, pixelSize int) (image.I
 			}
 
 			// Draw pixelSize x pixelSize block
-			for dy := 0; dy < pixelSize; dy++ {
-				for dx := 0; dx < pixelSize; dx++ {
+			for dy := range pixelSize {
+				for dx := range pixelSize {
 					img.Set(x*pixelSize+dx, y*pixelSize+dy, c)
 				}
 			}

@@ -47,3 +47,4 @@ bash ./run_benchmarks.sh
 
 - `data/input_test.txt`
 - `data/input.txt`
+  - This file is specific to each user of AoC, so it is not commited in the repository: you must provide your specific input file.

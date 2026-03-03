@@ -213,7 +213,7 @@ func CompareHands(handA CamelCardsHand, handB CamelCardsHand) int {
 		return -1
 	}
 
-	for i := 0; i < len(handA.NumericHand); i++ {
+	for i := range len(handA.NumericHand) {
 		if handA.NumericHand[i] > handB.NumericHand[i] {
 			return 1
 		}
