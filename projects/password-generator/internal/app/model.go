@@ -1,9 +1,9 @@
 package app
 
 import (
+	tea "charm.land/bubbletea/v2"
 	"github.com/TGITS/go-examples/go-examples/projects/password-generator/internal/domain/password"
 	"github.com/TGITS/go-examples/go-examples/projects/password-generator/internal/domain/rules"
-	tea "github.com/charmbracelet/bubbletea"
 )
 
 type Model struct {
@@ -42,6 +42,6 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	return m, nil
 }
 
-func (m Model) View() string {
-	return Render(m)
+func (m Model) View() tea.View {
+	return tea.NewView("Password Generator")
 }

@@ -1,6 +1,9 @@
 package rules
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 const (
 	MinLength = 8
@@ -22,13 +25,27 @@ type PasswordConfig struct {
 	UsePassphrase bool
 }
 
+type ValidationErrors struct {
+	Messages []string
+}
+
+func (e ValidationErrors) Error() string {
+	return strings.Join(e.Messages, "; ")
+}
+
 func ValidatePasswordConfig(cfg PasswordConfig) error {
+	messages := make([]string, 0, 2)
+
 	if cfg.Length < MinLength || cfg.Length > MaxLength {
-		return fmt.Errorf("length must be between %d and %d", MinLength, MaxLength)
+		messages = append(messages, fmt.Sprintf("length must be between %d and %d", MinLength, MaxLength))
 	}
 
 	if !cfg.Uppercase && !cfg.Lowercase && !cfg.Digits && !cfg.Symbols {
-		return fmt.Errorf("at least one character category must be enabled")
+		messages = append(messages, "at least one character category must be enabled")
+	}
+
+	if len(messages) > 0 {
+		return ValidationErrors{Messages: messages}
 	}
 
 	return nil

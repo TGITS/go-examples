@@ -34,24 +34,26 @@ Exit criteria:
 - `go test ./...` passes
 
 ### Phase 1 - Validation Rules (F02 foundation)
-Status: In Progress
+Status: Done — Sprint 1 completed 2026-04-15
 
 Scope:
 - Validate password length bounds
 - Validate at least one character category enabled
 - Keep validation errors clear and user-friendly
+- Support multi-error validation feedback for the UI
 
 Tasks:
-- [ ] Add/confirm full test matrix for config validation
-- [ ] Refine error messages for UI display
-- [ ] Add edge-case tests for min/max boundaries
+- [x] Add/confirm full test matrix for config validation
+- [x] Refine error messages for UI display
+- [x] Add edge-case tests for min/max boundaries
+- [x] Introduce `ValidationErrors` for aggregated validation feedback
 
 Exit criteria:
 - Validation behavior is fully test-covered
 - No ambiguity in invalid input handling
 
 ### Phase 2 - Secure Generator (F01)
-Status: In Progress
+Status: In Progress — Sprint 1 started 2026-04-15
 
 Scope:
 - Secure random generation using `crypto/rand`
@@ -59,9 +61,9 @@ Scope:
 - Preserve exact requested length
 
 Tasks:
-- [ ] Add test: only selected categories are present
+- [ ] Add test: only selected categories are present in output
 - [ ] Add test: repeated generations produce varied output
-- [ ] Add test: invalid config fails fast
+- [x] Add test: invalid config fails fast
 - [ ] Refactor generator internals for readability
 
 Exit criteria:
@@ -147,13 +149,13 @@ A task is done only if:
 
 ## 6) Current Backlog (Next 10 Actions)
 
-1. Expand validation tests for boundaries and invalid combinations.
-2. Confirm validator error messages to be UI-friendly.
-3. Add generator test for selected-category-only output.
-4. Add generator test for category inclusion guarantee.
-5. Add generator test for repeated-run variability.
-6. Finalize and document strength scoring thresholds.
-7. Add strength threshold boundary tests.
+1. Add generator test for selected-category-only output.
+2. Add generator test for category inclusion guarantee.
+3. Add generator test for repeated-run variability.
+4. Refactor generator internals for readability.
+5. Finalize and document strength scoring thresholds.
+6. Add strength threshold boundary tests.
+7. Align displayed strength labels with product wording.
 8. Add BubbleTea model tests for `g` and `enter` generation paths.
 9. Add BubbleTea model test for quit path `q`.
 10. Add first end-to-end manual smoke checklist in README.
@@ -166,9 +168,11 @@ Completed:
 - Initial architecture scaffold.
 - Initial validator and generator tests.
 - Initial BubbleTea wiring.
+- Full validation test matrix completed.
+- Validation error messages covered by tests.
+- Multi-error validation support introduced through `ValidationErrors`.
 
 In progress:
-- Tighten validation matrix.
 - Expand generator behavior tests.
 
 Risks:
@@ -177,9 +181,9 @@ Risks:
 
 ## 8) Status Snapshot
 
-- Overall MVP progress: 25%
+- Overall MVP progress: 35%
 - Phase 0: Done
-- Phase 1: In Progress
+- Phase 1: Done
 - Phase 2: In Progress
 - Phase 3: Not Started
 - Phase 4: Not Started
